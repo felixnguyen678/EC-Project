@@ -1,0 +1,42 @@
+<main id="main" data-aos="fade-in">
+    <section class="cart">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="cart_title">
+                    <i class="fas fa-home" style="display: inline-block;"></i>
+                    <p style="display: inline-block; font-size: 80%;"> / My Courses</p>
+                    <h5>My Courses</h5>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="cart_content">
+                    <div class="col-8">
+                        <p class="cart_content-title" style="font-size: 80%;">My Courses</p>
+                        <div class="cart_content-course">
+                            {{#each courses}}
+                                <div class="row" style="border: 1px solid rgb(201, 197, 197);">
+                                    <div class="col-2">
+                                        <img src="{{image}}" alt="" class="course_image">
+                                    </div>
+                                    <div class="col-6">
+                                        <p style="margin-left: 45px; font-size: 70%; padding-top: 5px;">{{name}}</p>
+                                    </div>
+                                    <div class="col-2">
+                                        {{!-- <a href="#" style="color: rgb(123, 209, 235); font-size: 70%; margin-left: 40px;">Remove</a> --}}
+                                    </div>
+                                    <div class="col-2">
+                                        {{!-- <p style="font-size: 80%; color: rgb(218, 58, 58); padding-top: 5px; margin-left: 40px;">${{sale}}</p>
+                                        <p style="font-size: 60%; text-decoration: line-through; margin-left: 40px;">${{price}}</p> --}}
+                                        <a target="_blank" href="https://www.youtube.com/watch?v=MZ6wMonyVyY" class="btn btn-danger" style="margin-top: 20px;">Join</a>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>    
+</main>

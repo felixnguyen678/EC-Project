@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="/assets/css/reigister.css">
+<div id="main">
+   <div class="container">
+    <form id="form" class="form" action="" method="POST" autocomplete="off" enctype="application/x-www-form-urlencoded">
+        <h2 style="color:blue">UPDATE USER</h2>
+        <div class="form-group">
+            <label for="Fullname">Fullname</label>
+            <input type="text" placeholder="Full Name" id="username" name="fullname" value="{{kh.name}}">
+        </div>
+            <input type="hidden" placeholder="Email" id="email" name="email" value="{{kh.email}}">
+            <div class="form-group">  
+            <label for="Fullname">Image</label>
+            <input type="text" placeholder="image" id="image" name="image" value="{{kh.image}}">
+        </div>
+        <div class="form-group"> 
+            <label for="username">Phone Number</label>
+            <input type="text" placeholder="Phone Number" id="phonenumber" name="phonenumber" value="{{kh.phone}}">
+        </div>
+        <div class="form-group">
+            <label for="username">Birthday</label>
+            <input type="date" placeholder="Birthday" id="Birthday" name="Birthday" value="{{khDB}}">
+        </div>
+        <button type="submit" class="btn btn-info">Sửa</button>
+    </form>
+</div>
+</div>

@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="/assets/css/reigister.css">
+<main id="main">
+    <div class="container listsanpham" >
+        <div class="row">
+            <div class="col-md-3">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget ads_widget">
+                    </aside>
+                    <aside class="single_sidebar_widget post_category_widget">
+                        <h4 class="widget_title">MANAGEMENT</h4>
+                        <ul class="list cat-list">
+                            <li>
+                                <a href="/admin/sinhvien" class="d-flex justify-content-between">
+                                    <p>User Management</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/admin/sanpham" class="d-flex justify-content-between">
+                                    <p>Courses Management</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>
+                </div>
+            </div>
+            <div class="col-md-7">
+                <table class="table table-striped">
+                    <thead>
+                        <td>Name</td>
+                        <td>Price</td>
+                        <td>Image</td>
+                        <td>Level</td>
+                        <td>StudentNumber</td>
+                        <td>CategoryId</td>
+                        <td>TopicId</td>
+                        <td><a href="/admin/sanpham/insert"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></a></td>
+                    </thead>
+                    {{#each listsanpham}}
+                    <tr>
+                        <td>{{name}}</td>
+                        <td>{{price}}$</td>
+                        <td><img src="{{image}}" alt="" height="50" witdh="50"></td>
+                        <td>{{level}}</td>
+                        <td>{{studentNumber}}</td>
+                        <td>{{categoryId}}</td>
+                        <td>{{topicId}}</td>
+                        <td>
+                            <a href="/admin/sanpham/sua/{{_id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                            <a href="/admin/sanpham/xoa/{{_id}}"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </table>
+            </div>
+        </div>
+    </div>
+</main>

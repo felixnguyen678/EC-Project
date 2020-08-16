@@ -1,0 +1,90 @@
+<main id="main" data-aos="fade-in">
+  <!-- ======= Breadcrumbs ======= -->
+  <div class="breadcrumbs">
+    <div class="container">
+      <h2>{{title}}</h2>
+      <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit
+        quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+    </div>
+  </div>
+  <!-- ======= Courses Section ======= -->
+  <section id="courses" class="courses">
+    <div class="container" data-aos="fade-up">
+      <div class="filter-bar d-flex flex-wrap align-items-center">
+        <div class="sorting">
+          <h5 style="display: inline-block;">Sort by price</h5>
+          <select style="margin-left: 5px;" id="sort" onchange="selectParam('sort', this.value, `{{sortCategory}}`,`{{sortTopic}}`)">
+            <option value="name">{{sort}}!</option>
+            <option value="price_reduction">price_reduction</option>
+            <option value="price_increase">price_increase</option>
+          </select>
+        </div>
+      </div>
+      <br>
+      <div class="row" data-aos="zoom-in" data-aos-delay="100">
+        {{#each courses}}
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch" style="margin-bottom: 25px;">
+          <div class="course-item" style="border: 1px solid rgb(75, 190, 75);">
+            <img src="{{image}}" class="img-fluid" alt="..." style="width: max-width; height: 200px;">
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4>{{categoryId}}</h4>
+                <p class="price" style="margin-left: 10px;">${{price}}</p>
+              </div>
+              <div style="height: 50px;">
+                <p><a href="/courses/detail/{{_id}}" style="color: rgb(78, 190, 224);">{{name}}</a></p>
+              </div>
+              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro, cumque!</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <img src="/assets/img/trainers/trainer-1.jpg" class="img-fluid" alt="">
+                  <span>Antonio</span>
+                </div>
+                <div class="trainer-rank d-flex align-items-center">
+                  <i class="bx bx-user"></i>&nbsp;50
+                  &nbsp;&nbsp;
+                  <i class="bx bx-heart"></i>&nbsp;65
+                </div>
+              </div>
+              <div style="margin-bottom: 2px; margin-left: 180px;">
+                <a href="/cart/{{_id}}" class="add-to-cart-btn" style="margin-bottom: 1px; margin-top: 10px;">Add to
+                  cart</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    </div>
+  </section>
+  <script>
+    function selectParam(key, value, category, topic, reset = false) {
+      var temp;
+      let urlParams = new URLSearchParams(location.search);
+      if (reset) {
+        for (let key in params) {
+          urlParams.set(key, params[key]);
+        }
+      }
+      urlParams.set(key, value);
+      let url1;
+      let url = `?${urlParams.toString()}`;
+      if (topic) {     
+        url = url + '&category=' + category + '&topic=' + topic;         
+        temp = topic.toLowerCase();
+        temp = temp.replace(' ', '-')
+        url = temp + url;       
+        //console.log(url);
+      } else if (category) {       
+        url = url + '&category=' + category;      
+        temp = category.toLowerCase();
+        temp = temp.replace(' ', '-')
+        url = temp + url;
+        console.log(url);
+        //console.log(url1);
+      }
+      location.href=url;
+    }
+  </script>
+
+</main>
